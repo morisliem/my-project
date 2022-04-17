@@ -1,0 +1,12 @@
+version: '3'
+services:
+  my-node-app:
+    # building Dockerfile, specify the path
+    build: .
+    env_file:
+      - ./.env
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - ./:/app
+      - /app/node_modules

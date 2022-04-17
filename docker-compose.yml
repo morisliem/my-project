@@ -7,6 +7,14 @@ services:
       - ./.env
     ports:
       - "${PORT}:${PORT}"
+
+  mongo-DB:
+    image: mongo
     volumes:
-      - ./:/app
-      - /app/node_modules
+      - mongo-db:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=moris
+      - MONGO_INITDB_ROOT_PASSWORD=mypassword
+
+volumes:
+  mongo-db:
