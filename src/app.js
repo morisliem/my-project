@@ -1,34 +1,34 @@
 const express = require("express");
 const app = express();
 
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 // const session = require("express-session");
 // const redis = require("redis");
-const {
-  MONGO_USER,
-  MONGO_PASSWORD,
-  MONGO_IP,
-  MONGO_PORT,
-  SESSION_SECRET,
-  REDIS_URL,
-  REDIS_PORT,
-} = require("./config/config");
+// const {
+//   MONGO_USER,
+//   MONGO_PASSWORD,
+//   MONGO_IP,
+//   MONGO_PORT,
+//   SESSION_SECRET,
+//   REDIS_URL,
+//   REDIS_PORT,
+// } = require("./config/config");
 
 // const redisStore = require("connect-redis")(session);
 
-const postRouter = require("./routes/postRoutes");
-const userRouter = require("./routes/userRoutes");
+// const postRouter = require("./routes/postRoutes");
+// const userRouter = require("./routes/userRoutes");
 
-const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+// const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
 
 // const connectWithRetry = () => {
-mongoose
-  .connect(mongoURL)
-  .then(() => console.log("Successfully connected to DB"))
-  .catch((e) => {
-    console.error(e);
-    setTimeout(connectWithRetry, 5000);
-  });
+// mongoose
+//   .connect(mongoURL)
+//   .then(() => console.log("Successfully connected to DB"))
+//   .catch((e) => {
+//     console.error(e);
+//     setTimeout(connectWithRetry, 5000);
+//   });
 // };
 
 // connectWithRetry();
@@ -63,8 +63,8 @@ mongoose
 
 app.use(express.json());
 
-app.use("/api/v1/posts", postRouter);
-app.use("/api/v1/users", userRouter);
+// app.use("/api/v1/posts", postRouter);
+// app.use("/api/v1/users", userRouter);
 
 app.get("/", (req, res) => {
   res.send("<h2>Init My Project</h2>");
