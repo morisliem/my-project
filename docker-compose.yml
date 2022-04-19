@@ -18,8 +18,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=moris
       - MONGO_INITDB_ROOT_PASSWORD=mypassword
 
-  redis:
-    image: redis
+  # redis:
+  #   image: redis
     
 
 volumes:
